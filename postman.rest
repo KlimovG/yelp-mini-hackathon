@@ -1,0 +1,31 @@
+GET http://localhost:3000/restaurants
+
+###
+
+GET http://localhost:3000/restaurants/3
+
+###
+
+GET http://localhost:3000/comments
+
+###
+
+GET http://localhost:3000/comments/3
+
+###
+
+GET http://localhost:3000/cities
+
+###
+
+GET http://localhost:3000/cities/3
+
+###
+
+GET http://localhost:3000/tags
+
+###
+
+GET http://localhost:3000/tags/3
+
+###
