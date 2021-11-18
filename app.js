@@ -19,11 +19,11 @@ const commentsRouter = require('./routes/comments');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors())
 app.use(express.json());
 app.use('/restaurants', restaurantsRouter);
 app.use('/tags', tagsRouter);
