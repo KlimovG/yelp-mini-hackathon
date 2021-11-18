@@ -5,9 +5,9 @@ require("dotenv").config();
 const cors = require('cors');
 
 
-// const path = require('path');
-// const cookieParser = require('cookie-parser');
-// const logger = require('morgan');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 const restaurantsRouter = require('./routes/restaurants');
 const tagsRouter = require('./routes/tags');
@@ -16,13 +16,13 @@ const commentsRouter = require('./routes/comments');
 
 
 // view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
-// app.use(logger('dev'));
-// app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(logger('dev'));
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 app.use(express.json());
 app.use('/restaurants', restaurantsRouter);
@@ -31,9 +31,9 @@ app.use('/cities', citiesRouter);
 app.use('/comments', commentsRouter);
 
 // catch 404 and forward to error handler
-// app.use(function (req, res, next) {
-//   next(createError(404));
-// });
+app.use(function (req, res, next) {
+  next(createError(404));
+});
 
 // error handler
 app.use(function (err, req, res, next) {
